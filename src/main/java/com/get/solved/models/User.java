@@ -12,10 +12,18 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
+    private String firstName;
+    private String lastName;
 
-    @ManyToMany
-    private List<Group> groups;
+//todo
+//    @ManyToMany
+//    private List<Group> groups;
 
-    @OneToMany
-    private List<Problem> problems;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Issue> issues;
+
+    public User(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 }
