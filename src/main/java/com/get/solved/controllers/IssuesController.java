@@ -5,6 +5,7 @@ import com.get.solved.services.IssueService;
 import com.get.solved.services.UserService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -19,7 +20,7 @@ public class IssuesController {
     }
 
     @GetMapping
-    Optional<Issue> getUserIssues (@PathVariable Long userId){
+    List<Issue> getUserIssues (@PathVariable Long userId){
         return issueService.getIssuesByUser(userId);
     }
 

@@ -6,14 +6,12 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import CreateButton from './CreateButton';
+import CreateButton from '../../Components/Buttons/CreateButton';
+import './IssueList.css';
 
 class IssueList extends Component {
     constructor(props) {
         super(props);
-        // this.style = {
-        //     table:  "minWidth: 500",        
-        // };
         this.state = {
             issues : []
         }
@@ -27,30 +25,32 @@ class IssueList extends Component {
 
     render() {
         return (
-            <div>
+            <div className="table">
                 <TableContainer component={Paper}>
-               <Table aria-label="simple table">
-                    <TableHead style={{backgroundColor:"#282c34"}}>
-                    <TableRow>
-                        <TableCell style={{color:"#FFFFFF"}}>Issue</TableCell>
-                        <TableCell style={{color:"#FFFFFF"}} align="right">Description</TableCell>
-                        <TableCell style={{color:"#FFFFFF"}} align="right">Creation Date</TableCell>
-                    </TableRow>
-                    </TableHead>
-                    <TableBody>
-                    {this.state.issues.map((issue) => (
-                        <TableRow key={issue.name}>
-                        <TableCell component="th" scope="row" className="link pointer dim">
-                            {issue.name}
-                        </TableCell>
-                        <TableCell align="right">{issue.description}</TableCell>
-                        <TableCell align="right">{issue.creationDate}</TableCell>
+                    <Table aria-label="simple table">
+                        <TableHead style={{backgroundColor:"#282c34", color:"white"}}>
+                        <TableRow>
+                            <TableCell style={{color:"#FFFFFF", width:"25%"}} align="left">Issue</TableCell>
+                            <TableCell style={{color:"#FFFFFF", width:"60%"}} align="left">Description</TableCell>
+                            <TableCell style={{color:"#FFFFFF", width:"15%"}} align="center">Creation Date</TableCell>
                         </TableRow>
-                    ))}
-                    </TableBody>
-                </Table>
+                        </TableHead>
+                        <TableBody>
+                        {this.state.issues.map((issue) => (
+                            <TableRow key={issue.issueId}>
+                            <TableCell component="th" scope="row" className="link pointer dim" style={{backgroundColor:"#E0E0E0"}}>
+                                {issue.name}
+                            </TableCell>
+                            <TableCell align="left">{issue.description}</TableCell>
+                            <TableCell align="center">{issue.creationDate}</TableCell>
+                            </TableRow>
+                        ))}
+                        </TableBody>
+                    </Table>
                 </TableContainer>
-                <CreateButton/>
+                <div className="button">
+                    <CreateButton/>
+                </div>
             </div>
         );
     }

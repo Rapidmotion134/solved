@@ -11,11 +11,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const DeleteButton = () => {
+const SaveButton = ({handleSubmit}) => {
     const classes = useStyles();
     return(
       <div className={classes.root}>
         <Button
+            type="submit"
+            // value="submit"
+            // onSubmit={handleSubmit}
             variant="contained"
             color="primary"
             style={{borderRadius:"50px"}}
@@ -28,4 +31,4 @@ const DeleteButton = () => {
     );
 }
 
-export default DeleteButton;
+export default SaveButton;

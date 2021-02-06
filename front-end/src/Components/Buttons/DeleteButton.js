@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
 const DeleteButton = () => {
     const classes = useStyles();
     return(
+      <div className={classes.root}>
         <Button
             style={{borderRadius:"50px"}}
             variant="contained"
@@ -21,8 +22,9 @@ const DeleteButton = () => {
             className={classes.button}
             startIcon={<DeleteIcon />}
         >
-        Delete
-      </Button>
+          Delete
+        </Button>
+      </div>
     );
 }
 

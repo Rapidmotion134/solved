@@ -3,10 +3,10 @@ package com.get.solved.repositories;
 import com.get.solved.models.Issue;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Optional;
+import java.util.List;
 
 public interface IssueRepository extends JpaRepository<Issue, Long> {
-    Optional<Issue> findIssuesByUser (Long userId);
-    Issue findByIssueId (Long problemId);
+    List<Issue> findIssuesByUserUserId(Long userId);
+    Issue findIssueByIssueId(Long issueId);
 //    Optional<Problem> findProblemsBy
 }

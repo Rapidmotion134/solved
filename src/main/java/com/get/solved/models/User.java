@@ -19,8 +19,8 @@ public class User {
 //    @ManyToMany
 //    private List<Group> groups;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private List<Issue> issues;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+//    private List<Issue> issues;
 
     public User(String firstName, String lastName) {
         this.firstName = firstName;

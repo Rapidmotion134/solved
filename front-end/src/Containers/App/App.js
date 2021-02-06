@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import './App.css';
-import Issue from "./Issue";
-import IssueList from "./IssueList";
-import Navigation from "./Navigation";
+import Issue from "../Issue/Issue";
+import IssueList from "../IssueList/IssueList";
+import Navigation from "../../Components/Navigation/Navigation";
+import CreateForm from "../../Components/CreateForm/CreateForm";
+import EditForm from "../EditForm/EditForm";
 
 class App extends Component {
   render () {  
@@ -14,6 +16,8 @@ class App extends Component {
         <div className="App-body">
           <IssueList/>
           <Issue/>
+          <CreateForm/>
+          <EditForm/>
         </div>
       </div>
     )

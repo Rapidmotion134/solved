@@ -1,8 +1,7 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
-
+import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +20,7 @@ const CreateButton = () => {
             variant="contained" 
             color="primary"
             className={classes.Button}
-            startIcon={<Icon>add_circle</Icon>}
+            startIcon={<AddCircleIcon/>}
           >
             Create
           </Button>

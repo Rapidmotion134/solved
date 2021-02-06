@@ -3,7 +3,7 @@ import { withStyles } from "@material-ui/core/styles";
 import TextField from '@material-ui/core/TextField';
 import SaveButton from '../../Components/Buttons/SaveButton';
 import CancelButton from '../../Components/Buttons/CancelButton';
-// import './CreateForm.css'
+import './EditForm.css'
 
 const styles = (theme) => ({
     root: {
@@ -15,7 +15,7 @@ const styles = (theme) => ({
       },
   });
 
-class EditFormClass extends Component{
+class EditForm extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -31,7 +31,7 @@ class EditFormClass extends Component{
         const { classes } = this.props;
         return (
             <form className={classes.root} noValidate autoComplete="off">
-                <span className="span">
+                <span className="spanE">
                     <p className="pe">Name: </p> 
                     <TextField
                         style={{width:'50ch'}}
@@ -48,7 +48,7 @@ class EditFormClass extends Component{
                         }}
                     />
                 </span>
-                <span className="span">
+                <span className="spanE">
                     <p className="pe">Description: </p> 
                     <TextField
                         className="fullWidth"
@@ -65,7 +65,7 @@ class EditFormClass extends Component{
                         }}
                     />
                 </span>
-                <span className="span">
+                <span className="spanE">
                     <p className="pe">Possible Causes: </p>
                     <TextField
                         className="fullWidth"
@@ -81,7 +81,7 @@ class EditFormClass extends Component{
                         }}
                     /> 
                 </span>
-                <span className="span">
+                <span className="spanE">
                     <p className="pe">Possible Fixes: </p> 
                     <TextField
                         className="fullWidth"
@@ -106,4 +106,4 @@ class EditFormClass extends Component{
     }
 }
 
-export default withStyles(styles, { withTheme: true })(EditFormClass);
+export default withStyles(styles, { withTheme: true })(EditForm);

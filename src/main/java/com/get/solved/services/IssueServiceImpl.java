@@ -4,7 +4,7 @@ import com.get.solved.models.Issue;
 import com.get.solved.repositories.IssueRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
 
 @Service
 public class IssueServiceImpl implements IssueService {
@@ -25,13 +25,13 @@ public class IssueServiceImpl implements IssueService {
     }
 
     @Override
-    public Optional<Issue> getIssuesByUser(Long userId) {
-        return issueRepository.findIssuesByUser(userId);
+    public List<Issue> getIssuesByUser(Long userId) {
+        return issueRepository.findIssuesByUserUserId(userId);
     }
 
     @Override
-    public Issue getIssueById(Long problemId) {
-        return issueRepository.findByIssueId(problemId);
+    public Issue getIssueById(Long issueId) {
+        return issueRepository.findIssueByIssueId(issueId);
     }
 
     @Override

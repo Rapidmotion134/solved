@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import DeleteButton from "./DeleteButton";
-import EditButton from "./EditButton";
+import DeleteButton from "../../Components/Buttons/DeleteButton";
+import EditButton from "../../Components/Buttons/EditButton";
+import './Issue.css';
 
 class Issue extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             issue : [],
         }
@@ -20,9 +21,10 @@ class Issue extends Component {
                 <p>Possible Causes : {this.state.issue.possibleCauses}</p>
                 <p>Possible Fixes : {this.state.issue.possibleSolutions}</p>
                 <p>Created on : {this.state.issue.creationDate}</p>
-                {console.log(this.state.issue)}
-                <DeleteButton/>  
-                <EditButton/>
+                <div className="buttons">
+                    <EditButton/>
+                    <DeleteButton/>  
+                </div>
             </div>
         );
     }

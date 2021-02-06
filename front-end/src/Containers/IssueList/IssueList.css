@@ -1,0 +1,9 @@
+.button{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2.5em;
+    margin-top: 16px;
+}
+.table{
+    width:95%;
+}

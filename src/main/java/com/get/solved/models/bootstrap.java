@@ -1,7 +1,5 @@
-package com.get.solved;
+package com.get.solved.models;
 
-import com.get.solved.models.Issue;
-import com.get.solved.models.User;
 import com.get.solved.repositories.IssueRepository;
 import com.get.solved.repositories.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -16,8 +14,8 @@ public class bootstrap {
     Issue issue = new Issue("Issue with Adding student",
             "name is null",
             "controller Add method",
-            "add @Requestbody");
-    issue.setUser(user);
+            "add @Requestbody",
+            user);
 
     @Bean
     CommandLineRunner initDatabase(UserRepository userRepository, IssueRepository issueRepository) {

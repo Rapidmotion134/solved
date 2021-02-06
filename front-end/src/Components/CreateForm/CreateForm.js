@@ -1,11 +1,11 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, {Component} from 'react';
+import { withStyles } from "@material-ui/core/styles";
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import SaveIcon from '@material-ui/icons/Save';
+import SaveButton from '../Buttons/SaveButton';
+import CancelButton from '../Buttons/CancelButton';
 import './CreateForm.css'
 
-const useStyles = makeStyles((theme) => ({
+const styles = (theme) => ({
   root: {
     '& .MuiTextField-root': {
       margin: theme.spacing(2),
@@ -13,72 +13,86 @@ const useStyles = makeStyles((theme) => ({
       flexWrap: 'wrap',
     },
   },
-}));
+});
 
-export default function CreateForm() {
-  const classes = useStyles();
+class CreateForm extends Component{
+  constructor(props){
+      super(props);
+      this.state = {
+         name : "",
+         description : "",
+         possibleCauses : "",
+         possibleSolutions : "" 
+      }
+  }
 
-  return (
-    <form className={classes.root} noValidate autoComplete="off">
-        <span className="span">
-          <p>Name: </p> 
-          <TextField
-            style={{width:'40ch'}}
-            className="name"
-            color="primary"
-            id="name"
-            label="Name"
-            placeholder=""
-            multiline
-            required
-          />
-        </span>
-        <span className="span">
-          <p>Description: </p> 
-          <TextField
-            className="fullWidth"
-            color="primary"
-            id="description"
-            label="Description"
-            placeholder=""
-            required
-            fullWidth
-            multiline
-          />
-        </span>
-        <span className="span">
-          <p>Possible Causes: </p>
-          <TextField
-            className="fullWidth"
-            color="primary"
-            id="causes"
-            label="Possible Causes"
-            placeholder=""
-            fullWidth
-            multiline
-          /> 
-        </span>
-        <span className="span">
-          <p>Possible Fixes: </p> 
-          <TextField
-            className="fullWidth"
-            color="primary"
-            id="fixes"
-            label="Possible Fixes"
-            placeholder=""
-            fullWidth
-            multiline
-          />
-        </span> 
-        <Button
-          variant="contained"
-          color="primary"
-          style={{borderRadius:"50px", marginTop:"1em"}}
-          className={classes.button}
-          startIcon={<SaveIcon />}
-        >
-          Save
-        </Button>   
-    </form>
-  );
+  handleSubmit(event) {
+    console.log(event);    
+    event.preventDefault();
+  }
+  
+
+  render(){
+    const { classes } = this.props;
+    return (
+      <form className={classes.root} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
+          <span className="span">
+            <p className="p">Name: </p> 
+            <TextField
+              style={{width:'50ch'}}
+              className="name"
+              color="primary"
+              id="name"
+              label="Name"
+              placeholder=""
+              multiline
+              required
+            />
+          </span>
+          <span className="span">
+            <p className="p">Description: </p> 
+            <TextField
+              className="fullWidth"
+              color="primary"
+              id="description"
+              label="Description"
+              placeholder=""
+              required
+              fullWidth
+              multiline
+            />
+          </span>
+          <span className="span">
+            <p className="p">Possible Causes: </p>
+            <TextField
+              className="fullWidth"
+              color="primary"
+              id="causes"
+              label="Possible Causes"
+              placeholder=""
+              fullWidth
+              multiline
+            /> 
+          </span>
+          <span className="span">
+            <p className="p">Possible Fixes: </p> 
+            <TextField
+              className="fullWidth"
+              color="primary"
+              id="fixes"
+              label="Possible Fixes"
+              placeholder=""
+              fullWidth
+              multiline
+            />
+          </span> 
+          <div className="buttons">
+            <SaveButton onSubmit={this.handleSubmit}/>
+            <CancelButton/>
+          </div>  
+      </form>
+    );
+  }
 }
+
+export default withStyles(styles, { withTheme: true })(CreateForm);
