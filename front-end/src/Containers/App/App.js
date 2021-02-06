@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import './App.css';
+import Issue from "./Issue";
+import IssueList from "./IssueList";
 import Navigation from "./Navigation";
 
 class App extends Component {
@@ -10,7 +12,8 @@ class App extends Component {
           <Navigation/>
         </header>
         <div className="App-body">
-
+          <IssueList/>
+          <Issue/>
         </div>
       </div>
     )

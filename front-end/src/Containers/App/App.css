@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  min-height: 2.3em;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1.3em;
+}
+ 
+.App-body{
+  margin: 1em 2em 1em 10em;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */

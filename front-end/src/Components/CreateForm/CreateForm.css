@@ -1,0 +1,13 @@
+.span{
+    display: grid;
+    grid-template-columns: 15% 75%;
+    /* border: solid black; */
+}
+p{
+    padding: 6px 0px 7px 2.5em; 
+    margin-top: 32px;
+    text-align: left;
+}
+.fullWidth{
+    width: 40px;
+}

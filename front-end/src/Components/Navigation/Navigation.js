@@ -2,9 +2,9 @@ import React from "react";
 
 const Navigation = () => {
     return(
-        <div>
-            
-        </div>
+        <nav>
+          <p className="f5 link dim underline pointer">Sign Out</p>  
+        </nav>
     );
 }
 
